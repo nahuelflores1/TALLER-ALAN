@@ -1,0 +1,208 @@
+@import "tipografia";
+
+$colorLetraGenerico:red;
+$AnchoAlturaLetra: width 40px height 40px;
+$bordeCuadro: border 5px solid;
+
+@mixin medidas ($ancho, $alto){
+    width: $ancho;
+    height: $alto;
+}
+
+@mixin fondo ($color, $borde) {
+    background-color: rgb(5, 172, 19);
+    border-radius: 4px;
+}
+
+.logo{
+    @include medidas(100px,100px)
+}
+
+p{
+    color: $colorLetraGenerico;
+    tamaño: $AnchoAlturaLetra;
+    font-size: 20px;
+}
+
+.ContenedorPrincipal{
+    border: 2px solid black;
+}
+
+.ContenedorPrincipal p{
+    color: red;
+    font-size: 20px;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+    margin-left: 250px;
+    margin-top: 50px;
+}
+/**/
+.ContenedorPrincipal__Juegos{
+    height: 1000px;
+    width: 1000px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction:column-reverse;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-items:stretch;
+}
+
+.Contenedor1{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border: 6px solid black;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Contenedor2{
+    width: 200px;
+    height: 200px;
+    background-color: orange;
+    border: 6px dotted black;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Contenedor3{
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    border: 6px double black;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Contenedor4{
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    border: 6px ridge black;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contPagina{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /*grid-template-columns: repeat(3 ifr)*/
+    grid-template-rows: .3fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    grid-template-areas: 
+    "logoPag menuPrinc menuPrinc"
+    "fotoPrinc fotoPrinc titulo"
+    "fotoPrinc fotoPrinc parrafito"
+    "parrafo parrafo parrafo"
+    "foto1 foto2 foto3"
+    "foto1 foto2 foto3"
+    "footer footer footer"
+    ;
+}
+
+.logo2{
+    grid-area: logoPag;
+    background: yellow;
+}
+
+.menu{
+    grid-area: menuPrinc;
+    background: orange;
+}
+
+.imagenPrincipal{
+    grid-area: fotoPrinc;
+    background: blue;
+}
+
+.tituloPrincipal{
+    grid-area: titulo;
+    background: violet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parrafito{
+    grid-area: parrafito;
+    background: brown;
+}
+
+.parrafo{
+    grid-area: parrafo;
+    background: white
+}
+
+.foto1{
+    grid-area: foto1;
+    background: salmon;
+}
+
+.foto2{
+    grid-area: foto2;
+    background: seagreen;
+}
+
+.foto3{
+    grid-area: foto3;
+    background: pink;
+}
+
+.footer_index{
+    grid-area: footer;
+    background: aquamarine;
+}
+.fotoPrincipal{
+    width: 450px;
+    height: 410px;
+}
+
+.loguito{
+    width: 200px;
+    height: 200px;
+}
+
+button{
+    width: 150px;
+    height: 50px;
+    border: none;
+    background: black;
+    color: white;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+}
+
+.boton{
+    @extend button;
+    &:hover{
+        background: map-get($coloresHover,colorBtn)
+    }
+
+.boton2{
+    @extend button;
+    &:hover(
+        background: map-get($coloresHover, colorBtn2)
+    )
+}
+
+$coloresHover:(
+    colorBtn: orange,
+    colorBtn2: pink,
+);
+
+}
